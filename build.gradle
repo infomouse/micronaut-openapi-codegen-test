@@ -1,0 +1,25 @@
+buildscript {
+    dependencies {
+        classpath "io.kokuwa.micronaut:micronaut-openapi-codegen:4.0.2"
+    }
+}
+
+plugins {
+    id("org.openapi.generator") version "7.0.1"
+}
+
+openApiGenerate {
+    generatorName = "micronaut"
+    inputSpec = "${projectDir}/test.yaml"
+    modelNameSuffix = "Dto"
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+}
